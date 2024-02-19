@@ -84,7 +84,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "chatbot",
         "USER": "postgres",
-        "PASSWORD": "root",
+        "PASSWORD": "OxyContin",
         "HOST": "127.0.0.1",
         "PORT": "5432",
     }

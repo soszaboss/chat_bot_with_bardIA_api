@@ -1,0 +1,32 @@
+{
+  "name": "chat_bot_with_bardia_api",
+  "version": "1.0.0",
+  "description": "Mini Chat Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soszaboss/chat_bot_with_bardIA_api.git"
+  },
+  "author": "Moustoifa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soszaboss/chat_bot_with_bardIA_api/issues"
+  },
+  "homepage": "https://github.com/soszaboss/chat_bot_with_bardIA_api#readme",
+  "devDependencies": {
+    "css-loader": "^6.10.0",
+    "style-loader": "^3.3.4",
+    "webpack": "^5.90.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.2.1",
+    "bootstrap": "^5.3.2",
+    "bootstrap-icons": "^1.11.3",
+    "jquery": "^3.7.1",
+    "redux": "^5.0.1"
+  }
+}
