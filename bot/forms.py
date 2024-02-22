@@ -8,8 +8,8 @@ from django.utils.translation import gettext_lazy as _
 
 
 class LoginUser(forms.ModelForm):
-    email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={"class":"form-control", "id":"email", "placeholder":"username"}))
-    password = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={"class":"form-control", "id":"password", "placeholder":"Password", "autocomplete":"current-password"}))
+    email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={"class":"form-control mb-3 fs-3", "id":"email", "placeholder":"username"}))
+    password = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={"class":"form-control mb-3 fs-3", "id":"password", "placeholder":"Password", "autocomplete":"current-password"}))
 
     class Meta:
         model = User
@@ -26,13 +26,13 @@ class RegisterUser(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields["username"].widget.attrs.update(
-            {"class": "form-control mb-3", "required": True, "placeholder": "Username"})
+            {"class": "form-control mb-3 fs-3", "required": True, "placeholder": "Username"})
         self.fields["email"].widget.attrs.update(
-            {"class": "form-control mb-3", "required": True, "placeholder": "Email"})
+            {"class": "form-control mb-3 fs-3", "required": True, "placeholder": "Email"})
         self.fields["password1"].widget.attrs.update(
-            {"class": "form-control mb-3", "required": True, "placeholder": "Password"})
+            {"class": "form-control mb-3 fs-3", "required": True, "placeholder": "Password"})
         self.fields["password2"].widget.attrs.update(
-            {"class": "form-control mb-3", "required": True, "placeholder": "Confirm Password"})
+            {"class": "form-control mb-3 fs-3", "required": True, "placeholder": "Confirm Password"})
         self.fields["username"].label = "Username"
         self.fields["email"].label = "Email address"
         self.fields["password1"].label = "Password"

@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  font-size: 1.8em !important;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.btn-container-width {
+  width: 50%;
+}
+
+.btn-space-between {
+  width: 20em !important;
+  height: 5em !important;
+  text-align: center;
+  line-height: 5em;
+  font-size: 18px;
+}
+
+.grid-container {
+  display: grid;
+}
+
+.container-2-columns {
+  grid-template-columns: 20% 80%;
+}
+
+.container-2-rows {
+  grid-template-rows: 20% 80%;
+}
+
+.container-3-rows {
+  grid-template-rows: 10% 75% 15%;
+}
+
+.btn-logout {
+  font-size: 1.2em;
+}

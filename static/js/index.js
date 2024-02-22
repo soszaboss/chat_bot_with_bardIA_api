@@ -1,7 +1,5 @@
-import $ from 'jquery';
-import { createStore } from '@reduxjs/toolkit';
+'strict mode';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
 
 // Votre code utilisant jQuery et Redux va ici...
 

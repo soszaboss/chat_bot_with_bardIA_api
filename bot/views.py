@@ -6,6 +6,8 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from django.urls import reverse_lazy
+
+
 # Create your views here.
 
 class Login(auth_views.LoginView):
@@ -23,28 +25,38 @@ class Login(auth_views.LoginView):
                 user = authenticate(request, username=user.username, password=password)
                 if user is not None:
                     login(request, user)
-                    return redirect('index')
+                    print('login')
+                    return redirect('chatroom')
         error = "Email ou mot de passe non valide"
-        return render(request, 'bot/auth/login.html', {'error': error, 'form':form})
+        return render(request, 'bot/auth/login.html', {'error': error, 'form': form})
 
 
 class NewUser(CreateView):
     template_name = 'bot/auth/register.html'
     form_class = RegisterUser
-    success_url = reverse_lazy('index')
+    success_url = '/bot/chatroom/'
 
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
         if form.is_valid():
-            form.save()
+            self.object = form.save()
             username = form.cleaned_data.get("username")
             password = form.cleaned_data.get("password1")
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
+                print("registred")
                 return redirect(self.get_success_url())
         return render(request, self.template_name, {'form': form})
 
 
+class Logout(auth_views.LogoutView):
+    next_page = '/bot/account/login/'
+
+
 def index(request):
-    return HttpResponse('<h1> Login Page </h1>')
+    return render(request, 'bot/chat/index.html')
+
+
+def chat(request):
+    return render(request, 'bot/chat/chat.html')

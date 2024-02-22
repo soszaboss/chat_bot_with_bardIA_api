@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="chatroom" class="container-2-columns grid-container full-height">
+    <div class="full-height">
+        <div class="bg-danger-subtle ">nouvelle discussion</div>
+        <div class="bg-warning-subtle h-75"> discussion</div>
+    </div>
+    <div class="grid-container container-3-rows full-height">
+        <div class="bg-secondary d-flex flex-row justify-content-between">
+            <div>Brand</div>
+            <div>
+                <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-logout">Logout</button>
+            </form>
+            </div>
+        </div>
+        <div class="bg-secondary-subtle full-height">bg-secondary-subtle</div>
+        <div class="bg-dark-subtle">bg-dark-subtle</div>
+    </div>
+</div>
+{% endblock %}
