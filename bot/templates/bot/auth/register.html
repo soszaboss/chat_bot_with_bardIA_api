@@ -16,30 +16,36 @@
                 <h1 class="ls-tight font-bolder h2">
                   Welcome...!
                 </h1>
-                <p class="mt-2">Let's build someting great</p>
+                <p class="mt-2"> Rejoin Us and Let's build someting great</p>
               </div>
-              <div>
-                <div>
-                    <ul>
-                        {% if form.non_field_errors %}
-                            {% for error in form.non_field_errors %}
-                                <li>{{ error }}</li>
+                    <form method="POST">
+                        {% csrf_token %}
+                        {% if error %}
+                            <div class="alert alert-warning text-center" role="alert">
+                                {{ error.0 }}
+                            </div>
+                        {% endif %}
+                        {% if errors %}
+                            {% for field, error_list in errors.items %}
+                                <div class="alert alert-warning px-3 error-item-list text-center" role="alert">
+                                    <ul>
+                                        {% for error in error_list %}
+                                            <li>{{ field }} : {{ error }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
                             {% endfor %}
                         {% endif %}
-                        </ul>
-                    </div>
-            </div>
-                    <form method="POST">
-                    {% csrf_token %}
-                    {{ form.username }}
-                    {{ form.email }}
-                    {{ form.password1.errors }}
-                    {{ form.password1 }}
-                    {{ form.password2 }}
-                    <div class="d-grid gap-2">
-                      <button class="btn btn-dark fs-3" type="submit">Register</button>
-                    </div>
-                </form>
+                        {{ form.username }}
+                        {{ form.email }}
+                        {{ form.password1.errors }}
+                        {{ form.password1 }}
+                        {{ form.password2 }}
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-dark fs-3" type="submit">Register</button>
+                        </div>
+                    </form>
+
               <div class="py-3 text-center">
                 <span class="text-xs text-uppercase font-semibold">or</span>
               </div>

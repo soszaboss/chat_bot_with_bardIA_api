@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
 
 * {
   margin: 0;
@@ -10,6 +11,7 @@ html{
 }
 body{
   font-size: 1.8em!important;
+  overflow-y: hidden;
 }
 
 .full-height {
@@ -42,7 +44,87 @@ grid-template-rows: 20% 80%;
   grid-template-rows: 10% 75% 15%;
 }
 
-.btn-logout{
-  font-size: 1.2em;
+.btn-add-discussion, .btn-select-discussion{
+  font-size: 1em;
 }
 
+.btn-logout{
+  height: 3.5em;
+  width: 3.5em;
+}
+
+.error-item-list{
+  font-size: 0.9em !important;
+}
+
+.text-area-form{
+  width: 85% !important;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  border: none;
+  background-color: #F2F2F2;
+  font-size: 1em
+}
+
+textarea.form-control:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  background-color: #F2F2F2;
+}
+
+
+.text-area-form-container{
+  padding: 1.5% 0 0 0;
+  background-color: #F2F2F2;
+}
+
+.form-submit{
+  position: relative;
+}
+
+.text-area-form-btn{
+  position: absolute;
+  left: 82%;
+  bottom: 35%;
+}
+
+.btn-add-discussion-section{
+   background-color: #adb5bd;
+}
+
+.btn-add-discussion-section:hover, .btn-add-discussion:hover{
+  transition: 0.5s;
+  opacity: 0.85;
+}
+
+.btn-add-discussion-section:active, .btn-add-discussion:active{
+ background-color: #cff4fc;
+  transition: 0.5s;
+
+}
+
+.btn-select-discussion:hover{
+  background-color: #cff4fc;
+}
+
+.brand-name {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.chat-container {
+  overflow-y: auto; /* Enable vertical scrolling */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+  scroll-behavior: smooth; /* Make scrolling smooth */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.chat-container::-webkit-scrollbar {
+  display: none;
+}
+
+.area-disabled, .area-disabled:hover, .area-disabled:active{
+  opacity: 0.5;
+  cursor: pointer;
+  background-color: #adb5bd;
+}

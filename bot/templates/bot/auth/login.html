@@ -24,19 +24,13 @@
                 </h1>
                 <p class="mt-2">Let's build someting great</p>
               </div>
-              <div>
-                <div>
-                    <ul>
-                        {% if form.non_field_errors %}
-                            {% for error in form.non_field_errors %}
-                                <li>{{ error }}</li>
-                            {% endfor %}
-                        {% endif %}
-                        </ul>
-                    </div>
-                </div>
                 <form method="POST">
                     {% csrf_token %}
+                    {% if error %}
+                        <div class="alert alert-warning text-center" role="alert">
+                            <span class="error-item-list">{{ error.0 }} </span>
+                        </div>
+                    {% endif %}
                     {{ form }}
                     <div class="d-grid gap-2">
                       <button class="btn btn-dark fs-3" type="submit">Login</button>

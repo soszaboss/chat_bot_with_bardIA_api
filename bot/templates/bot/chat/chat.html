@@ -3,21 +3,131 @@
 {% block content %}
 <div id="chatroom" class="container-2-columns grid-container full-height">
     <div class="full-height">
-        <div class="bg-danger-subtle ">nouvelle discussion</div>
-        <div class="bg-warning-subtle h-75"> discussion</div>
+            <div class="py-5 bg-body-tertiary">
+                <div class="w-50 mx-auto btn-add-discussion-section rounded-pill p-2 area-disabled" id="btn-add-discussion-section">
+                    <button class="btn btn-add-discussion p-2 area-disabled" id="btn-add-discussion" disabled>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+                            </svg>
+                        </span>
+                        <span class="ms-2">
+                            New discussion
+                        </span>
+                    </button>
+                </div>
+        </div>
+        <div class="bg-body-tertiary h-100 py-5">
+            <p class="text-center mb-4"> Last discussion</p>
+            <p class="discussion-section mb-3 container" id="discussion-section">
+                <button class="btn btn-select-discussion rounded-pill btn-lg">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-chat-right" viewBox="0 0 16 16">
+                          <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+                        </svg>
+                    </span>
+                    <span class="ms-2">
+                        Discussion 1
+                    </span>
+                </button>
+            </p>            <p class="discussion-section mb-3 container">
+                <button class="btn btn-select-discussion  rounded-pill btn-lg">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-chat-right" viewBox="0 0 16 16">
+                          <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+                        </svg>
+                    </span>
+                    <span class="ms-2">
+                        Discussion 2
+                    </span>
+                </button>
+            </p>
+            <p class="discussion-section mb-3 container ">
+                <button class="btn btn-select-discussion rounded-pill btn-lg">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-chat-right" viewBox="0 0 16 16">
+                          <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+                        </svg>
+                    </span>
+                    <span class="ms-2">
+                        Discussion 3
+                    </span>
+                </button>
+            </p>
+            <p class="discussion-section mb-3 container ">
+                <button class="btn btn-select-discussion rounded-pill btn-lg">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-chat-right" viewBox="0 0 16 16">
+                          <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+                        </svg>
+                    </span>
+                    <span class="ms-2">
+                        Discussion 4
+                    </span>
+                </button>
+            </p>
+            <p class="discussion-section mb-3 container ">
+                <button class="btn btn-select-discussion rounded-pill btn-lg">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-chat-right" viewBox="0 0 16 16">
+                          <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+                        </svg>
+                    </span>
+                    <span class="ms-2">
+                        Discussion 5
+                    </span>
+                </button>
+            </p>
+            <p class="discussion-section mb-3 container ">
+                <button class="btn btn-select-discussion rounded-pill btn-lg">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-chat-right" viewBox="0 0 16 16">
+                          <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+                        </svg>
+                    </span>
+                    <span class="ms-2">
+                        Discussion 6
+                    </span>
+                </button>
+            </p>
+        </div>
     </div>
     <div class="grid-container container-3-rows full-height">
-        <div class="bg-secondary d-flex flex-row justify-content-between">
-            <div>Brand</div>
-            <div>
+        <div class="d-flex flex-row justify-content-between py-4 px-4">
+            <div class="fw-bold brand-name">Dolo-AI</div>
+            <div class=" ">
                 <form method="post" action="{% url 'logout' %}">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-logout">Logout</button>
+                <button type="submit" class="btn btn-logout btn-dark rounded-circle">
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                  d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                            <path fill-rule="evenodd"
+                                  d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                        </svg>
+                    </p>
+                </button>
             </form>
             </div>
         </div>
-        <div class="bg-secondary-subtle full-height">bg-secondary-subtle</div>
-        <div class="bg-dark-subtle">bg-dark-subtle</div>
+        <div class="full-height container w-75 chat-container py-5" id="chat-container">
+            <p class="user-discussion mb-5"><span class="rounded-pill me-5 bg-secondary-subtle py-4 px-4">You</span><span>User request</span> </p>
+            <p class="ai-discussion mb-5"><span class="rounded-pill me-5 bg-info-subtle p-4">AI</span><span>AI response</span></p>
+        </div>
+        <div class="container-fluid">
+            <form class="form-submit p-3" id="form-submit">
+                <div class="form-floating text-area-form-container w-75 mx-auto rounded-pill">
+                    <textarea class="form-control text-area-form mx-auto " placeholder="Ask Something" id="floatingTextarea2" style="height: 100px" name="textarea"></textarea>
+                </div>
+                <button type="button" class="btn btn-secondary text-area-form-btn p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                        <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %}
