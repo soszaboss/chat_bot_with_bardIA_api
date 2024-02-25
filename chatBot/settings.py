@@ -11,6 +11,13 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import environ  # Import the environ module
+
+env = environ.Env()  # Create an instance of the Env class
+
+environ.Env.read_env()  # Read the .env file
+
+API_KEY = env("API_KEY")  # Retrieve the value of the API_KEY environment variable
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

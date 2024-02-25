@@ -1,8 +1,7 @@
 import os
 from openai import OpenAI
 
-# KEY = os.environ.get('OPENAI_API_KEY')
-KEY = "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"
+KEY = "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"
 client = OpenAI(api_key=KEY)
 
 response = client.chat.completions.create(
@@ -13,3 +12,4 @@ response = client.chat.completions.create(
   ]
 )
 print(response)#.choices[0].message.content)
+

@@ -8,7 +8,6 @@ from django.contrib.auth import authenticate, login
 from django.utils.translation import gettext_lazy as _
 from .models import Message, Discussion
 from django.http import JsonResponse
-import os
 from openai import OpenAI
 # Create your views here.
 
@@ -110,9 +109,13 @@ class ChatView(CreateView):
     def get(self, request, *args, **kwargs):
         return render(request, 'bot/chat/chat.html')
 
-    def chat_completion(self, user_question:str):
-        KEY = "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" #os.environ.get('OPENAI_API_KEY')
-        client = OpenAI(api_key=KEY)
+    def chat_completion(self, user_question: str):
+        import environ  # Import the environ module
+        env = environ.Env()  # Create an instance of the Env class
+        environ.Env.read_env()  # Read the .env file
+
+        KEY = env("API_KEY")  # Retrieve the value of the API_KEY environment variable
+        client = OpenAI(api_key=KEY)  # Use the API key to authenticate with the OpenAI API
 
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
@@ -122,6 +125,7 @@ class ChatView(CreateView):
             ]
         )
         return response.choices[0].message.content
+
 
 
 

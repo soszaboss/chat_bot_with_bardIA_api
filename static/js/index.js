@@ -62,14 +62,15 @@ async function sendRequest() {
             if (btnNewDiscussionDisabled){
                 console.log(response);
                 const discussionTitle = userRequest.split(' ')[0];
-                $('#btn-add-discussion-section, #btn-add-discussion').removeClass('area-disabled"');
+                $('#btn-add-discussion-section').removeClass('area-disabled"');
+                $('#btn-add-discussion').removeClass('area-disabled"');
                 $('#btn-add-discussion').removeProp('disabled');
                 $('#discussion-section').html(`${discussion(discussionTitle)}`);
                 discussionID = response.discussion_id
                 btnNewDiscussionDisabled = false
             }
-            chatContainer.append(`<p class="user-discussion d-flex flex-column"><span class="rounded-pill me-5 bg-secondary-subtle user-icon d-inlineflex-lg-shrink-0">You</span><span class="d-inline-block">${userRequest}</span> </p>`)
-            chatContainer.append(`<p class="ai-discussion d-flex flex-column"><span class="rounded-pill me-5 bg-info-subtle p-4 d-inline flex-lg-shrink-0">AI</span><span class="d-inline-block">${response.response}</span></p></span></p>`)
+            chatContainer.append(`<p class="user-discussion d-flex flex-column"><span class="rounded-pill me-5 bg-secondary-subtle user-icon d-inline-block col-sm-1">You</span><span class="d-inline-block col-sm-11">${userRequest}</span> </p>`)
+            chatContainer.append(`<p class="ai-discussion d-flex flex-column"><span class="rounded-pill me-5 bg-info-subtle p-3 d-inline-block col-sm-1">AI</span><span class="d-inline-block col-sm-11">${response.response}</span></p></span></p>`)
             // textArea.val('');
         }
     })
