@@ -76,33 +76,42 @@ class Logout(auth_views.LogoutView):
 def index(request):
     return render(request, 'bot/chat/index.html')
 
-
-def chat(request):
-    return render(request, 'bot/chat/chat.html')
-
 class ChatView(CreateView):
     template_name = 'bot/chat/chat.html'
     model = Message
 
     def post(self, request, *args, **kwargs):
-        if request.is_ajax():
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
             textarea = request.POST.get('textarea')
-            response = self.chat_completion(textarea)
-            discussion = Discussion(user=request.user)
-            discussion.save()
-            messages = Message(message_user=textarea, discussion=discussion, message_ia=response)
-            messages.save()
-            data = {
-                'response': response,'discussion_id': discussion.id
-            }
-            return JsonResponse(data)
+            btn_disabled = request.POST.get("btn_disabled")
+            if btn_disabled:
+                response = self.chat_completion(textarea)
+                discussion = Discussion(user_id=request.user.id)
+                discussion.save()
+                messages = Message(message_user=textarea, discussion=discussion, message_ia=response)
+                messages.save()
+                data = {
+                    'response': response,'discussion_id': discussion.uuid
+                }
+                return JsonResponse(data)
+            else:
+                textarea = request.POST.get('textarea')
+                discussion_id = request.POST.get('discussion_id')
+                response = self.chat_completion(textarea)
+                discussion = Discussion.objects.get(uuid=discussion_id)
+                messages = Message(message_user=textarea, discussion=discussion, message_ia=response)
+                messages.save()
+                data = {
+                    'response': response
+                }
+                return JsonResponse(data)
         return super().post(request, *args, **kwargs)
 
     def get(self, request, *args, **kwargs):
         return render(request, 'bot/chat/chat.html')
 
     def chat_completion(self, user_question:str):
-        KEY = os.environ.get('OPENAI_API_KEY')
+        KEY = "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" #os.environ.get('OPENAI_API_KEY')
         client = OpenAI(api_key=KEY)
 
         response = client.chat.completions.create(
