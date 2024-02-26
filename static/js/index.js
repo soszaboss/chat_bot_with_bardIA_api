@@ -1,6 +1,8 @@
 'strict mode';
 
-let btnNewDiscussionDisabled = true;
+$(document).ready(function(){
+    // Your code here
+    let btnNewDiscussionDisabled = true;
 const chatContainer = $('#chat-container');
 const textArea = $('#textarea');
 let discussionID;
@@ -12,8 +14,10 @@ const form = $('#form-submit').on("submit",async function (e) {
     await sendRequest();
 })
 
-enterKeyword();
 
+
+enterKeyword();
+addBtnNewDiscussion();
 ////////////////////////////////////////////////// Function //////////////////////////////////
 
 function getCookie(name) {
@@ -58,19 +62,17 @@ async function sendRequest() {
             'X-Requested-With': 'XMLHttpRequest',
             'X-CSRFToken': csrftoken,
         },
-        success: function (response) {
+        success: async function (response) {
             if (btnNewDiscussionDisabled){
                 console.log(response);
                 const discussionTitle = userRequest.split(' ')[0];
-                $('#btn-add-discussion-section').removeClass('area-disabled"');
-                $('#btn-add-discussion').removeClass('area-disabled"');
-                $('#btn-add-discussion').removeProp('disabled');
                 $('#discussion-section').html(`${discussion(discussionTitle)}`);
                 discussionID = response.discussion_id
+               await ableOrDisableBtn(true);
                 btnNewDiscussionDisabled = false
             }
-            chatContainer.append(`<p class="user-discussion d-flex flex-column"><span class="rounded-pill me-5 bg-secondary-subtle user-icon d-inline-block col-sm-1">You</span><span class="d-inline-block col-sm-11">${userRequest}</span> </p>`)
-            chatContainer.append(`<p class="ai-discussion d-flex flex-column"><span class="rounded-pill me-5 bg-info-subtle p-3 d-inline-block col-sm-1">AI</span><span class="d-inline-block col-sm-11">${response.response}</span></p></span></p>`)
+            chatContainer.append(`<p class="user-discussion d-flex flex-column"><span class="rounded-pill me-5 bg-secondary-subtle user-icon d-inline-block text-center col-sm-1 p-2">You</span><span class="d-inline-block col-sm-11">${userRequest}</span> </p>`)
+            chatContainer.append(`<p class="ai-discussion d-flex flex-column"><span class="rounded-pill me-5 bg-info-subtle p-2 text-center d-inline-block col-sm-1 p-2">AI</span><span class="d-inline-block col-sm-11">${response.response}</span></p></span></p>`)
             // textArea.val('');
         }
     })
@@ -102,4 +104,26 @@ const discussion = (string) => {
             `
 }
 
+async function ableOrDisableBtn(bool) {
+    if (bool){
+        console.log("desable")
+        $('#btn-add-discussion-section').removeClass('area-disabled');
+        $('#btn-add-discussion').removeClass('area-disabled');
+        $('#btn-add-discussion').removeProp('disabled');
+    }else {
+        console.log('able')
+        $('#btn-add-discussion-section').addClass('area-disabled');
+        $('#btn-add-discussion').addClass('area-disabled');
+        $('#btn-add-discussion').prop('disabled', true);
+    }
+}
 
+function addBtnNewDiscussion(){
+    return $('#btn-add-discussion').on('click', async function (){
+    console.log('clicked')
+    await ableOrDisableBtn(false);
+    btnNewDiscussionDisabled = true
+    $('#chat-container').empty()
+})
+}
+});

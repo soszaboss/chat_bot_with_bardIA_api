@@ -5,7 +5,7 @@
     <div class="full-height">
             <div class="py-5 bg-body-tertiary">
                 <div class="w-50 mx-auto btn-add-discussion-section rounded-pill p-2 area-disabled" id="btn-add-discussion-section">
-                    <button class="btn btn-add-discussion p-2 area-disabled" id="btn-add-discussion" disabled>
+                    <button type="button" class="btn btn-add-discussion p-2 area-disabled" id="btn-add-discussion" onclick="function(){addBtnNewDiscussion()}" disabled>
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                               <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
@@ -44,11 +44,10 @@
             </div>
         </div>
         <div class="full-height container w-75 chat-container py-5 bg-body-tertiary rounded-top-3 px-5" id="chat-container">
-            <p class="ai-discussion"><span class="rounded-pill me-5 bg-info-subtle p-3">AI</span><span>Hello! How can I assist you today?</span></p>
         </div>
-        <div class="container-fluid">
-            <form class="form-submit p-3" id="form-submit">
-                <div class="form-floating text-area-form-container w-75 mx-auto rounded-pill Regular shadow-lg rounded">
+        <div class="container-fluid Regular  ">
+            <form class="form-submit p-3" id="form-submit shadow">
+                <div class="form-floating text-area-form-container w-75 mx-auto rounded-pill Regular ">
                     <textarea class="form-control text-area-form mx-auto " placeholder="Ask Something" id="textarea" style="height: 100px" name="textarea"></textarea>
                 </div>
                 <button type="button" class="btn btn-secondary text-area-form-btn p-2">

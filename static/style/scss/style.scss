@@ -111,11 +111,13 @@ textarea.form-control:focus {
     font-family: 'Nunito Sans', sans-serif;
 }
 
-.chat-container {
+#chat-container {
   overflow-y: auto; /* Enable vertical scrolling */
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
-  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
-  scroll-behavior: smooth; /* Make scrolling smooth */
+  height: 710px;
+  max-height: 710px;
+  //scrollbar-width: none; /* Hide scrollbar for Firefox */
+  //-ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+  //scroll-behavior: smooth; /* Make scrolling smooth */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -135,7 +137,5 @@ textarea.form-control:focus {
 }
 
 .user-discussion{
-  .user-icon{
-    padding: 1em 0.8em;
-  }
+
 }

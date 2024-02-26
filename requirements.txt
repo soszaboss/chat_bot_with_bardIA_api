@@ -19,6 +19,7 @@ distro==1.7.0
 distro-info==1.1+ubuntu0.2
 Django==5.0.2
 django-debug-toolbar==4.3.0
+django-environ==0.11.2
 django-npm-mjs==2.5.0
 django-sass==1.1.0
 duplicity==0.8.21

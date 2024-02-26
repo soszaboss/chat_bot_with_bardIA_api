@@ -112,15 +112,11 @@ textarea.form-control:focus {
   font-family: 'Nunito Sans', sans-serif;
 }
 
-.chat-container {
+#chat-container {
   overflow-y: auto;
   /* Enable vertical scrolling */
-  scrollbar-width: none;
-  /* Hide scrollbar for Firefox */
-  -ms-overflow-style: none;
-  /* Hide scrollbar for IE and Edge */
-  scroll-behavior: smooth;
-  /* Make scrolling smooth */
+  height: 710px;
+  max-height: 710px;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -137,8 +133,4 @@ textarea.form-control:focus {
 .ai-discussion {
   margin-top: 2.5em;
   margin-bottom: 2.5em;
-}
-
-.user-discussion .user-icon {
-  padding: 1em 0.8em;
 }
